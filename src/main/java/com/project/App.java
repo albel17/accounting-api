@@ -20,7 +20,12 @@ public class App {
         server.setHandler(context);
 
         ServletHolder servletHolder = context.addServlet(org.glassfish.jersey.servlet.ServletContainer.class, "/*");
+        servletHolder.setInitOrder(0);
         servletHolder.setInitParameter("javax.ws.rs.Application", "com.project.config.AppConfig");
+        servletHolder.setInitParameter("jersey.config.server.provider.classnames",
+                "org.glassfish.jersey.moxy.json.MoxyJsonFeature");
+
+        BasicConfigurator.configure();
 
         server.start();
         server.join();
