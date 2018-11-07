@@ -7,7 +7,8 @@ After that, you can run
 `java -jar api-test-1.0-SNAPSHOT-jar-with-dependencies.jar`
 
 App starts on localhost:8080, API:
-http://localhost:8080/accounting/{source_id}/{target_id}/{amount}
+
+`PUT http://localhost:8080/accounting/{source_id}/{target_id}/{amount}`
 
 where
 

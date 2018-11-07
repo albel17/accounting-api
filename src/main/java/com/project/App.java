@@ -20,10 +20,7 @@ public class App {
         server.setHandler(context);
 
         ServletHolder servletHolder = context.addServlet(org.glassfish.jersey.servlet.ServletContainer.class, "/*");
-        servletHolder.setInitOrder(0);
         servletHolder.setInitParameter("javax.ws.rs.Application", "com.project.config.AppConfig");
-
-        BasicConfigurator.configure();
 
         server.start();
         server.join();
